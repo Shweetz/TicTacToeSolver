@@ -2,8 +2,8 @@ tab = [ 0, 0, 0,
         0, 0, 0,
         0, 0, 0]
 	
-# player 1: player = 1
-# player 2: player = -1
+# player 1 start: player = 1
+# player 2 start: player = -1
 player = 1
 
 # winning combinations
