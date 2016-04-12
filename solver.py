@@ -11,18 +11,22 @@ win = [(0,1,2), (3,4,5), (6,7,8), (0,3,6), (1,4,7), (2,5,8), (0,4,8), (2,4,6)]
 
 # checks if one player won, if there are empty cells or if it's draw 
 def gameState(tab):
+	# a player wins
 	for i in win:
 		if tab[i[0]] == 1 and tab[i[1]] == 1 and tab[i[2]] == 1:
 			return 1
 		if tab[i[0]] == -1 and tab[i[1]] == -1 and tab[i[2]] == -1:
 			return -1
-	draw = True
+			
+	# optimization for empty cell
+	if tab[8] == 0:
+		return -2
+	# empty cell
 	for i in tab:
 		if i == 0:
-			draw = False
-	if draw:
-		return 0
-	return -2
+			return -2
+	# draw
+	return 0
 	
 # recursive method to check possibility branches
 def search(tab, player, t):
